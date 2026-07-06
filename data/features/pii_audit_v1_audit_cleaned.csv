@@ -1,0 +1,8 @@
+table,column,pii_type,decision,reason
+listing,listing_id,entity identifier,keep as entity key only,needed to define one row per listing; not a model input
+listing,host_id,entity identifier,remove from model features,identifies the listing owner and is unnecessary for prediction
+host,host_pseudo_id,pseudonymous identifier,remove,persistent host identifier that does not provide meaningful predictive information
+listing,license,registration identifier,remove,official identifier that is not relevant to forecasting demand
+review,review_id,record identifier,exclude individual IDs; use aggregates only,each review ID is unique and should not be used as a feature
+review,reviewer_id,person identifier,exclude individual IDs; use aggregates only,identifies a reviewer rather than describing the listing
+review,reviewer_pseudo_id,pseudonymous identifier,remove,anonymous but persistent reviewer identifier with no useful predictive signal

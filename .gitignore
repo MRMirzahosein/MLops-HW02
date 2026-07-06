@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.venv/
+venv/
+.venv_hw03/
+student_hw03_fastapi_serving/.venv_hw03/
