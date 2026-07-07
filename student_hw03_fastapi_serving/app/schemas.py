@@ -29,16 +29,18 @@ class ListingFeatures(BaseModel):
                 "minimum_nights": 3,
                 "maximum_nights": 356,
                 "instant_bookable": False,
-                "is_superhost": True,
+                "host_is_superhost": True,
                 "host_listing_count": 1,
-                "review_count": 10,
-                "unique_reviewer_count": 311.0,
-                "avg_comment_length": 302.1672,
-                "max_comment_length": 1917.0,
+                "total_reviews_before_cutoff": 311.0,
+                "unique_reviewers_before_cutoff": 311.0,
+                "avg_comment_len_before_cutoff": 302.1672,
+                "max_comment_len_before_cutoff": 1917.0,
                 "days_since_last_review": 94.0,
+                "available_days_last_90d": 16,
                 "available_rate_last_90d": 0.1758,
                 "avg_minimum_nights_calendar_last_90d": 3.0,
                 "avg_maximum_nights_calendar_last_90d": 30.0,
+                "available_days_last_30d": 11,
                 "available_rate_last_30d": 0.3548,
                 "avg_minimum_nights_calendar_last_30d": 3.0,
                 "avg_maximum_nights_calendar_last_30d": 30.0,
@@ -59,19 +61,21 @@ class ListingFeatures(BaseModel):
     maximum_nights: int = Field(..., ge=0)
 
     instant_bookable: bool
-    is_superhost: bool
+    host_is_superhost: bool
     host_listing_count: int = Field(..., ge=0)
-    review_count: int = Field(..., ge=0)
 
-    unique_reviewer_count: Optional[float] = Field(..., ge=0)
-    avg_comment_length: Optional[float] = Field(..., ge=0)
-    max_comment_length: Optional[float] = Field(..., ge=0)
+    total_reviews_before_cutoff: Optional[float] = Field(..., ge=0)
+    unique_reviewers_before_cutoff: Optional[float] = Field(..., ge=0)
+    avg_comment_len_before_cutoff: Optional[float] = Field(..., ge=0)
+    max_comment_len_before_cutoff: Optional[float] = Field(..., ge=0)
     days_since_last_review: Optional[float] = Field(..., ge=0)
 
+    available_days_last_90d: int = Field(..., ge=0)
     available_rate_last_90d: float = Field(..., ge=0, le=1)
     avg_minimum_nights_calendar_last_90d: Optional[float] = Field(..., ge=0)
     avg_maximum_nights_calendar_last_90d: Optional[float] = Field(..., ge=0)
 
+    available_days_last_30d: int = Field(..., ge=0)
     available_rate_last_30d: float = Field(..., ge=0, le=1)
     avg_minimum_nights_calendar_last_30d: Optional[float] = Field(..., ge=0)
     avg_maximum_nights_calendar_last_30d: Optional[float] = Field(..., ge=0)

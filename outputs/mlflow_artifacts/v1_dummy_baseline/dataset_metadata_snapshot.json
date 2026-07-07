@@ -20,12 +20,12 @@
     "threshold": 0.3
   },
   "excluded_columns": [
-    "dataset_version",
-    "future_available_rate_30d",
-    "cutoff_date",
-    "high_demand_proxy",
     "future_calendar_days_observed_30d",
     "listing_id",
-    "future_available_days_30d"
+    "future_available_rate_30d",
+    "future_available_days_30d",
+    "cutoff_date",
+    "dataset_version",
+    "high_demand_proxy"
   ]
 }
